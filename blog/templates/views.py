@@ -1,17 +1,16 @@
-from django.shortcuts import render
+
 from django.views.generic import ListView, DetailView
 
 from .models import Post
 
-# Create your views here.
 
-def index(request):
-    posts = Post.object.all().order_by('-pk')
-    return render(request, 'blog/index.html', {'posts':posts})
-
-def single_post_page(request,pk):
-    post1 = Post.objects.get(pk=pk)
-    return render(request, 'blog.single_post_page.html', {'post':post1})
+# def index(request):
+#     posts = Post.object.all().order_by('-pk')
+#     return render(request, 'blog/index.html', {'posts':posts})
+#
+# def single_post_page(request,pk):
+#     post1 = Post.objects.get(pk=pk)
+#     return render(request, 'blog.single_post_page.html', {'post':post1})
 
 
 class PostList(ListView):
